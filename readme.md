@@ -4,6 +4,12 @@ DevOption Ignite is a production ready Docker image for Laravel applications. Si
 
 ## Usage
 
+- Install `laravel/octane` in your Laravel application.
+
+```bash
+composer require laravel/octane
+```
+
 - Create a new `Dockerfile` in your Laravel project root directory.
 
 ```dockerfile
