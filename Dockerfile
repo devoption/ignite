@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM alpine:3.18
 
 ################################################################################
 # Install Dependencies
@@ -7,12 +7,12 @@ FROM alpine:3.16
 RUN apk add --no-cache bash curl g++
 
 ################################################################################
-# Install PHP 8.1
+# Install PHP 8.2
 ################################################################################
 
 RUN apk add --no-cache                                                         \
     $(                                                                         \
-        apk search -qe --no-cache 'php81*'                                     \
+        apk search -qe --no-cache 'php82*'                                     \
             | sed -e 's/[^ ]*dev[^ ]*//ig'                                     \
             | sed -e 's/[^ ]*xdebug[^ ]*//ig'                                  \
             | sed -e 's/[^ ]*couchbase[^ ]*//ig'                               \
@@ -31,4 +31,4 @@ EXPOSE 8000
 # Start Web Server
 ################################################################################
 
-ENTRYPOINT [ "php81", "artisan", "octane:start", "--server=swoole", "--host=0.0.0.0" ]
+ENTRYPOINT [ "php82", "artisan", "octane:start", "--server=swoole", "--host=0.0.0.0" ]
