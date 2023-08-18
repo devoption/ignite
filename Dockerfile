@@ -16,6 +16,7 @@ RUN apk add --no-cache                                                         \
             | sed -e 's/[^ ]*dev[^ ]*//ig'                                     \
             | sed -e 's/[^ ]*xdebug[^ ]*//ig'                                  \
             | sed -e 's/[^ ]*couchbase[^ ]*//ig'                               \
+            | sed -e 's/[^ ]*pecl-psr[^ ]*//ig'                                \
             | cat                                                              \
     )
 
